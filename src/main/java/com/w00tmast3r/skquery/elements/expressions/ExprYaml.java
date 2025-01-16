@@ -20,7 +20,7 @@ import ch.njol.skript.lang.util.SimpleExpression;
 import ch.njol.util.Kleenean;
 import ch.njol.util.coll.CollectionUtils;
 
-@Patterns("yaml (1宅alue|2好odes|3好odes with keys|4奸ist) %string% from [file] %string%")
+@Patterns("yaml (value|nodes|nodes with keys|list) %string% from [file] %string%")
 public class ExprYaml extends SimpleExpression<Object>{
 	
 	private Expression<String> node, file;
@@ -58,7 +58,7 @@ public class ExprYaml extends SimpleExpression<Object>{
 	
 	@Override
 	public String toString(Event e, boolean arg1) {
-		return "[skellett] (file|y[a]ml) [file] (1宅alue|2好ode[s]|3好ode[s with] keys|4奸ist) %string% (in|at|from) [file] %string%";
+		return "[skellett] (file|y[a]ml) [file] (value|node[s]|node[s with] keys|list) %string% (in|at|from) [file] %string%";
 	}
 	
 	@Override
