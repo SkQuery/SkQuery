@@ -1,18 +1,19 @@
 package com.w00tmast3r.skquery.elements.expressions;
 
-import ch.njol.skript.classes.Comparator;
 import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.Literal;
 import ch.njol.skript.lang.SkriptParser;
 import ch.njol.skript.lang.Variable;
 import ch.njol.skript.lang.util.SimpleExpression;
-import ch.njol.skript.registrations.Comparators;
+import org.skriptlang.skript.lang.comparator.Comparator;
 import ch.njol.util.Kleenean;
 
 import com.w00tmast3r.skquery.annotations.Patterns;
 import com.w00tmast3r.skquery.util.Collect;
 
 import org.bukkit.event.Event;
+import org.skriptlang.skript.lang.comparator.Comparators;
+import org.skriptlang.skript.lang.comparator.Relation;
 
 @Patterns({"%object%[ ]===[ ]%object%",
         "%object%[ ]==[ ]%object%",
@@ -27,20 +28,20 @@ public class ExprComparisons extends SimpleExpression<Boolean> {
 
     @Override
     protected Boolean[] get(Event e) {
-        Comparator.Relation r = Comparators.compare(first.getSingle(e), second.getSingle(e));
+        Relation r = Comparators.compare(first.getSingle(e), second.getSingle(e));
         switch (match) {
             case 0:
-                return Collect.asArray(Comparator.Relation.EQUAL.is(r));
+                return Collect.asArray(Relation.EQUAL.isImpliedBy(r));
             case 1:
                 return Collect.asArray((first.getSingle(e) + "").equals(second.getSingle(e) + ""));
             case 2:
-                return Collect.asArray(Comparator.Relation.GREATER.is(r));
+                return Collect.asArray(Relation.GREATER.isImpliedBy(r));
             case 3:
-                return Collect.asArray(Comparator.Relation.SMALLER.is(r));
+                return Collect.asArray(Relation.SMALLER.isImpliedBy(r));
             case 4:
-                return Collect.asArray(Comparator.Relation.GREATER_OR_EQUAL.is(r));
+                return Collect.asArray(Relation.GREATER_OR_EQUAL.isImpliedBy(r));
             case 5:
-                return Collect.asArray(Comparator.Relation.SMALLER_OR_EQUAL.is(r));
+                return Collect.asArray(Relation.SMALLER_OR_EQUAL.isImpliedBy(r));
         }
         return null;
     }

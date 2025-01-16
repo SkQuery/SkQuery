@@ -4,7 +4,6 @@ import ch.njol.skript.doc.Name;
 import ch.njol.skript.lang.Condition;
 import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.SkriptParser.ParseResult;
-import ch.njol.util.Checker;
 import ch.njol.util.Kleenean;
 
 import com.w00tmast3r.skquery.annotations.Description;
@@ -35,13 +34,10 @@ public class CondIsWithin extends Condition {
 	public boolean check(Event event) {
 		Location p1 = pos1.getSingle(event);
 		Location p2 = pos2.getSingle(event);
-		return locations.check(event, new Checker<Location>(){
-			@Override
-			public boolean check(Location location) {
+		return locations.check(event, (location) -> {
 				if (location == null || p1 == null || p2 == null)
 					return false;
 				return new CuboidRegion(p1, p2).checkHas(location.toVector());
-			}
 		}, isNegated());
 	}
 

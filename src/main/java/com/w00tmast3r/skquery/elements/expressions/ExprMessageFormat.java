@@ -1,6 +1,5 @@
 package com.w00tmast3r.skquery.elements.expressions;
 
-import ch.njol.skript.ScriptLoader;
 import ch.njol.skript.Skript;
 import ch.njol.skript.classes.Changer;
 import ch.njol.skript.lang.Expression;
@@ -41,7 +40,7 @@ public class ExprMessageFormat extends SimpleExpression<String> {
 
     @Override
     public boolean init(Expression<?>[] expressions, int i, Kleenean kleenean, SkriptParser.ParseResult parseResult) {
-        if (ScriptLoader.isCurrentEvent(PlayerChatEvent.class)) {
+        if (getParser().isCurrentEvent(PlayerChatEvent.class)) {
             Skript.error("Message format can only be used inside a chat event", ErrorQuality.SEMANTIC_ERROR);
             return false;
         }
