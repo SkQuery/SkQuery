@@ -45,7 +45,7 @@ dependencies {
 		transitive = false
 	}
 
-	shadow group: 'org.bstats', name: 'bstats-bukkit', version: '3.0.2'
+	shadow group: 'org.bstats', name: 'bstats-bukkit', version: '3.1.0'
 
 	shadow (group: 'org.json', name: 'json', version: '20230618')
 
