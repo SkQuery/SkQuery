@@ -1,13 +1,13 @@
 package com.w00tmast3r.skquery.elements.effects.base;
 
+import java.io.File;
+
+import org.bukkit.event.Event;
+
 import ch.njol.skript.lang.Effect;
 import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.SkriptParser;
-import ch.njol.skript.lang.parser.ParserInstance;
 import ch.njol.util.Kleenean;
-import org.bukkit.event.Event;
-
-import java.io.File;
 
 public abstract class Pragma extends Effect {
 
@@ -21,7 +21,7 @@ public abstract class Pragma extends Effect {
 
     @Override
     public boolean init(Expression<?>[] expressions, int i, Kleenean kleenean, SkriptParser.ParseResult parseResult) {
-        register(ParserInstance.get().getCurrentScript().getConfig().getFile(), parseResult);
+        register(getParser().getCurrentScript().getConfig().getFile(), parseResult);
         return true;
     }
 

@@ -14,8 +14,8 @@ public class CondBoolean extends Condition {
 
 	private Expression<Boolean> condition;
 
-	@SuppressWarnings("unchecked")
 	@Override
+	@SuppressWarnings("unchecked")
 	public boolean init(Expression<?>[] expressions, int matchedPattern, Kleenean isDelayed, ParseResult parseResult) {
 		condition = (Expression<Boolean>) expressions[0];
 		return true;
@@ -23,7 +23,10 @@ public class CondBoolean extends Condition {
 
 	@Override
 	public boolean check(Event event) {
-		return condition.check(event, object -> object);
+		for (Boolean b : condition.getAll(event))
+			if (b)
+				return true;
+		return false;
 	}
 
 	@Override

@@ -44,7 +44,7 @@ public class ExprHealthScale extends SimplePropertyExpression<Player, Number> {
 		switch (mode) {
 			case SET:
 				for (Player p : getExpr().getAll(e))  {
-					p.setHealthScale(n.doubleValue() * 2);
+					p.setHealthScale(n.doubleValue());
 				}
 				break;
 			case RESET:

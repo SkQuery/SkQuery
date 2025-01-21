@@ -7,6 +7,8 @@ import org.bukkit.util.io.BukkitObjectInputStream;
 import org.bukkit.util.io.BukkitObjectOutputStream;
 import org.yaml.snakeyaml.external.biz.base64Coder.Base64Coder;
 
+import ch.njol.skript.Skript;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -40,6 +42,9 @@ public class InventorySerialUtils {
 			return inventory;
 		} catch (ClassNotFoundException e) {
 			throw new RuntimeException("Unable to decode class type.", e);
+		} catch (IllegalArgumentException e) {
+			Skript.exception(e, "The inventory type was incorrect. You must use the same inventory that was involved in serialization");
+			return null;
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}

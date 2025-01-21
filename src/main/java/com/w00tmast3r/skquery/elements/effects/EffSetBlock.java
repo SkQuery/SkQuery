@@ -15,7 +15,7 @@ import com.w00tmast3r.skquery.annotations.Patterns;
 
 @Name("Set Block Without Updates")
 @Description("Set blocks to another block without causing surrounding blocks to update.")
-@Patterns("@noupdate::set %blocks% to %itemtype%")
+@Patterns("(@noupdate::set %blocks% to %itemtype%|set %blocks% to %itemtype% with no [block] updates)")
 public class EffSetBlock extends Effect {
 
     private Expression<Block> blocks;

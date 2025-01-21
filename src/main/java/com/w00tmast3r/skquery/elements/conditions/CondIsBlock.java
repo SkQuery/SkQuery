@@ -14,6 +14,7 @@ import org.bukkit.event.Event;
 import com.w00tmast3r.skquery.annotations.Description;
 import com.w00tmast3r.skquery.annotations.Patterns;
 
+// Exists to fix a bug in Skript that LimeGlass fixed around 2.8-2.9
 @Name("Is Block")
 @Description("Checks whether or not a certain itemtype is a placeable block.")
 @Patterns({"%itemtype% is [a] block", "%itemtype% (isn't|is not) [a] block"})

@@ -3,29 +3,8 @@ version: @version@
 #@an makes the pattern allow for `an`.
 
 types:
-	regainreason: health regain, regain health
 	fireworktype: firework, firework type
 	profession: profession
-
-regainreason:
-		#Any other reason not covered by the other reasons
-	custom: custom
-		#When a player regains health from eating consumables
-	eating: eating, eat
-		#When an ender dragon regains health from an ender crystal
-	ender_crystal: ender crystal
-		#When a player is healed by a potion or spell
-	magic: magic, potion, potions, spell, spells
-		#When a player is healed over time by a potion or spell
-	magic_regen: magic regen, potion regen, potion regeneration, spell regeneration
-		#When a player regains health from regenerating due to Peaceful mode (difficulty=0)
-	regen: regen, regeneration
-		#When a player regains health from regenerating due to their hunger being satisfied
-	satiated: satiated, satisfied
-		#When an entity is damaged by the Wither potion effect
-	wither: wither
-		#When a wither is filling its health during spawning
-	wither_spawn: wither spawn, wither spawning
 	
 fireworktype:
 	ball: ball, normal

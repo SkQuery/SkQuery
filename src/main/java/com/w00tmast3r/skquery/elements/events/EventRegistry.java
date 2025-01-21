@@ -33,6 +33,7 @@ import org.bukkit.event.vehicle.VehicleEntityCollisionEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
+@SuppressWarnings("deprecation")
 public class EventRegistry extends AbstractTask {
 
     @Override

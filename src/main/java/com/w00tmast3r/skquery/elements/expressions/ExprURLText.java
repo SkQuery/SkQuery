@@ -3,11 +3,13 @@ package com.w00tmast3r.skquery.elements.expressions;
 import ch.njol.skript.expressions.base.SimplePropertyExpression;
 
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Scanner;
 
+import com.w00tmast3r.skquery.SkQuery;
 import com.w00tmast3r.skquery.annotations.Patterns;
-
 
 @Patterns("text from [url] %string%")
 public class ExprURLText extends SimplePropertyExpression<String, String> {
@@ -17,21 +19,18 @@ public class ExprURLText extends SimplePropertyExpression<String, String> {
         return "URL";
     }
 
-    @SuppressWarnings("resource")
-	@Override
+    @Override
     public String convert(String s) {
         try {
-            URL url = new URL(s);
-            Scanner a = new Scanner(url.openStream());
-            String str = "";
-            boolean first = true;
-            while(a.hasNext()){
-                if(first) str = a.next();
-                else str += " " + a.next();
-                first = false;
+            URL url = new URI(s).toURL();
+            try (Scanner scanner = new Scanner(url.openStream())) {
+                scanner.useDelimiter("\\A");
+                return scanner.hasNext() ? scanner.next() : "";
             }
-            return str;
-        } catch(IOException ex) {
+        } catch (IOException | URISyntaxException ex) {
+            if (SkQuery.getInstance().getConfig().getBoolean("debug", false)) {
+                ex.printStackTrace();
+            }
             return null;
         }
     }

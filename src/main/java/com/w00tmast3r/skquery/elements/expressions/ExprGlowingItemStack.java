@@ -20,8 +20,8 @@ public class ExprGlowingItemStack extends SimplePropertyExpression<ItemStack, It
 
     @Override
     public ItemStack convert(ItemStack itemStack) {
-        if (itemStack.getType() == Material.BOW) itemStack.addUnsafeEnchantment(Enchantment.WATER_WORKER, 69);
-        else itemStack.addUnsafeEnchantment(Enchantment.ARROW_INFINITE, 69);
+        if (itemStack.getType() == Material.BOW) itemStack.addUnsafeEnchantment(Enchantment.LURE, 69);
+        else itemStack.addUnsafeEnchantment(Enchantment.INFINITY, 69);
         ItemMeta metadata = itemStack.getItemMeta();
 	    metadata.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 	    itemStack.setItemMeta(metadata);
