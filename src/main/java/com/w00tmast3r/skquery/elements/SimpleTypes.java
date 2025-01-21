@@ -14,7 +14,6 @@ import org.bukkit.Registry;
 import org.bukkit.Sound;
 import org.bukkit.WorldBorder;
 import org.bukkit.entity.Villager;
-import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.scoreboard.DisplaySlot;
 
 
@@ -22,7 +21,6 @@ public class SimpleTypes extends AbstractTask {
 
 	@Override
 	public void run() {
-		Classes.registerClass(new EnumClassInfo<>(InventoryType.class, "inventorytype", "inventory type"));
 		Classes.registerClass(new EnumClassInfo<>(DisplaySlot.class, "displayslot", "display slot"));
 		Classes.registerClass(new EnumClassInfo<>(Particle.class, "particle", "particle"));
 
