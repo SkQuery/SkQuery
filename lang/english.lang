@@ -4,7 +4,15 @@ version: @version@
 
 types:
 	fireworktype: firework, firework type
+	worldborder: world border
+	queryresult: query result
+	displayslot: display slot
 	profession: profession
+	predicate: predicate
+	particle: particles
+	markup: markup
+	lambda: lambda
+	art: art
 	
 fireworktype:
 	ball: ball, normal
@@ -23,3 +31,101 @@ profession:
 	nitwit: nitwit
 	normal: normal, villager
 	priest: priest
+
+art:
+	alban: alban
+	aztec: aztec
+	aztec2: aztec2
+	bomb: bomb
+	burningskull: burning skull, burning_skull
+	courbet: courbet
+	creebet: creebet
+	donkeykong: donkey kong, donkey_kong
+	fighters: fighters
+	graham: graham
+	kebab: kebab
+	match: match
+	pigscene: pigscene
+	plant: plant
+	pointer: pointer
+	pool: pool
+	sea: sea
+	skeleton: skeleton
+	skullandroses: skull and roses, skull_and_roses
+	stage: stage
+	sunset: sunset
+	void: void
+	wanderer: wanderer
+	wasteland: wasteland
+
+particles:
+	angry_villager: angry villager, angry_villager
+	barrier: barrier
+	block_crack: block crack, block_crack
+	block_dust: block dust, block_dust
+	bubble: bubble
+	cloud: cloud
+	crit: crit
+	damage_indicator: damage indicator, damage_indicator
+	dragon_breath: dragon breath, dragon_breath
+	drip_lava: drip lava, drip_lava
+	drip_water: drip water, drip_water
+	enchantment_table: enchantment table, enchantment_table
+	end_rod: end rod, end_rod
+	explosion_huge: explosion huge, explosion_huge
+	explosion_large: explosion large, explosion_large
+	explosion_normal: explosion normal, explosion_normal
+	falling_dust: falling dust, falling_dust
+	fireworks_spark: fireworks spark, fireworks_spark
+	flame: flame
+	footstep: footstep
+	heart: heart
+	item_crack: item crack, item_crack
+	lava: lava
+	mob_appearance: mob appearance, mob_appearance
+	note: note
+	portal: portal
+	redstone: redstone
+	slime: slime
+	smoke_large: smoke large, smoke_large
+	smoke_normal: smoke normal, smoke_normal
+	snow_shovel: snow shovel, snow_shovel
+	snowball: snowball
+	spell: spell
+	spell_instant: spell instant, spell_instant
+	spell_mob: spell mob, spell_mob
+	spell_mob_ambient: spell mob ambient, spell_mob_ambient
+	spell_witch: spell witch, spell_witch
+	splash: splash
+	suspended: suspended
+	suspended_depth: suspended depth, suspended_depth
+	sweep_attack: sweep attack, sweep_attack
+	totem: totem
+	town_aura: town aura, town_aura
+	villager_happy: villager happy, villager_happy
+	water_bubble: water bubble, water_bubble
+	water_drop: water drop, water_drop
+	water_splash: water splash, water_splash
+	water_wake: water wake, water_wake
+
+display slot:
+	below_name: below name, below_name
+	list: list
+	sidebar: sidebar
+	player_list: player list, player_list
+	sidebar_team_black: sidebar team black, sidebar_team_black
+	sidebar_team_dark_blue: sidebar team dark blue, sidebar_team_dark_blue
+	sidebar_team_dark_green: sidebar team dark green, sidebar_team_dark_green
+	sidebar_team_dark_aqua: sidebar team dark aqua, sidebar_team_dark_aqua
+	sidebar_team_dark_red: sidebar team dark red, sidebar_team_dark_red
+	sidebar_team_dark_purple: sidebar team dark purple, sidebar_team_dark_purple
+	sidebar_team_gold: sidebar team gold, sidebar_team_gold
+	sidebar_team_gray: sidebar team gray, sidebar_team_gray
+	sidebar_team_dark_gray: sidebar team dark gray, sidebar_team_dark_gray
+	sidebar_team_blue: sidebar team blue, sidebar_team_blue
+	sidebar_team_green: sidebar team green, sidebar_team_green
+	sidebar_team_aqua: sidebar team aqua, sidebar_team_aqua
+	sidebar_team_red: sidebar team red, sidebar_team_red
+	sidebar_team_light_purple: sidebar team light purple, sidebar_team_light_purple
+	sidebar_team_yellow: sidebar team yellow, sidebar_team_yellow
+	sidebar_team_white: sidebar team white, sidebar_team_white

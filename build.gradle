@@ -1,16 +1,18 @@
 import org.apache.tools.ant.filters.ReplaceTokens
 
 plugins {
-	id 'com.github.johnrengelman.shadow' version '8.1.1'
+	id 'com.gradleup.shadow' version '8.3.0'
 	id 'maven-publish'
 	id 'eclipse'
 	id 'java'
 }
 
-compileJava {
-    sourceCompatibility = '1.8'
-    targetCompatibility = '1.8'
+tasks.withType(JavaCompile).configureEach {
+	options.compilerArgs += ['-source', '' + 21, '-target', '' + 21]
 }
+
+compileTestJava.options.encoding = 'UTF-8'
+compileJava.options.encoding = 'UTF-8'
 
 repositories {
 	mavenCentral()
@@ -34,9 +36,6 @@ repositories {
 
 dependencies {
 
-	//Nullable annotation
-	implementation (group: 'org.eclipse.jdt', name: 'org.eclipse.jdt.annotation', version: '2.3.100')
-
 	//Spigot/Bukkit
 	implementation (group: 'org.spigotmc', name: 'spigot-api', version: '1.21.4-R0.1-SNAPSHOT')
 
@@ -54,12 +53,9 @@ dependencies {
 processResources {
 	filter ReplaceTokens, tokens: ["version": project.property("version")]
 	from ('lang') {
-        include '**/*'
-        into 'lang/'
-    }
-    from ('documentation') {
-        into 'documentation/'
-    }
+			include '**/*'
+			into 'lang/'
+	}
 }
 
 shadowJar {
@@ -68,7 +64,7 @@ shadowJar {
 		include(dependency('org.bstats:bstats-bukkit'))
 		include(dependency('org.bstats:bstats-base'))
 	}
-	relocate 'org.bstats', 'com.w00tmast3r.skquery.bstats'
+	relocate 'org.bstats', 'com.skquery.skquery.bstats'
 	archiveVersion = version
 	archiveFileName = project.name + "-" + version + ".jar"
 	minimize()
