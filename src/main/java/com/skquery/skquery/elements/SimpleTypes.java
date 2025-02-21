@@ -21,10 +21,14 @@ public class SimpleTypes extends AbstractTask {
 
 	@Override
 	public void run() {
-		Classes.registerClass(new EnumClassInfo<>(DisplaySlot.class, "displayslot", "display slot"));
-		Classes.registerClass(new EnumClassInfo<>(Particle.class, "particle", "particle"));
+		if (Classes.getExactClassInfo(DisplaySlot.class) == null) 
+			Classes.registerClass(new EnumClassInfo<>(DisplaySlot.class, "displayslot", "display slot"));
 
-		Classes.registerClass(new RegistryClassInfo<>(Art.class, Registry.ART, "art", "art"));
+		if (Classes.getExactClassInfo(Particle.class) == null)
+			Classes.registerClass(new EnumClassInfo<>(Particle.class, "particle", "particle"));
+
+		if (Classes.getExactClassInfo(Art.class) == null)
+			Classes.registerClass(new RegistryClassInfo<>(Art.class, Registry.ART, "art", "art"));
 
 		if (Classes.getExactClassInfo(WorldBorder.class) == null) {
 			Classes.registerClass(new ClassInfo<>(WorldBorder.class, "worldborder")
