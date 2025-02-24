@@ -46,7 +46,7 @@ public class ExprBorderWarningTime extends SimplePropertyExpression<WorldBorder,
 		if (delta[0] == null)
 			return;
 		Timespan timespan = (Timespan) delta[0];
-		Number time = timespan.getMilliSeconds() / 1000L;
+		Number time = timespan.getAs(Timespan.TimePeriod.MILLISECOND) / 1000L;
 		switch (mode) {
 			case SET:
 				for (WorldBorder border : getExpr().getArray(event))
