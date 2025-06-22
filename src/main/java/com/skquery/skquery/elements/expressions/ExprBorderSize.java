@@ -70,7 +70,7 @@ public class ExprBorderSize extends SimpleExpression<Number> {
 			return;
 		Timespan time = timespan.getSingle(event);
 		double amount = ((Number) delta[0]).doubleValue();
-		long milliseconds = time == null ? -1L : time.getMilliSeconds() / 1000L;
+		long milliseconds = time == null ? -1L : time.getAs(Timespan.TimePeriod.MILLISECOND) / 1000L;
 		switch (mode) {
 			case SET:
 				for (WorldBorder border : borders.getArray(event)) {
