@@ -1,4 +1,4 @@
-package com.skquery.skquery.elements.expressions;
+package com.w00tmast3r.skquery.elements.expressions;
 
 import java.io.File;
 import java.io.IOException;
@@ -58,7 +58,7 @@ public class ExprYaml extends SimpleExpression<Object>{
 	
 	@Override
 	public String toString(Event e, boolean arg1) {
-		return "[skellett] (file|y[a]ml) [file] (1�value|2�node[s]|3�node[s with] keys|4�list) %string% (in|at|from) [file] %string%";
+		return "[skellett] (file|y[a]ml) [file] (1¦value|2¦node[s]|3¦node[s with] keys|4¦list) %string% (in|at|from) [file] %string%";
 	}
 	
 	@Override

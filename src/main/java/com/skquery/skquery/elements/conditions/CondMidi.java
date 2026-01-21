@@ -4,7 +4,6 @@ import ch.njol.skript.doc.Name;
 import ch.njol.skript.lang.Condition;
 import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.SkriptParser.ParseResult;
-import ch.njol.util.Checker;
 import ch.njol.util.Kleenean;
 
 import org.bukkit.event.Event;
@@ -30,12 +29,7 @@ public class CondMidi extends Condition {
 	
 	@Override
 	public boolean check(Event event) {
-		return ID.check(event, new Checker<String>() {
-			@Override
-			public boolean check(String title) {
-				return MidiUtil.isPlaying(title);
-			}
-		}, isNegated());
+		return ID.check(event, MidiUtil::isPlaying, isNegated());
 	}
 	
 	@Override
