@@ -1,6 +1,6 @@
 name: SkQuery
 authors: [w00tmast3r, LimeGlass, SkQuery Contributors]
 version: @version@
-api-version: 1.13
+api-version: 1.21.4
 depend: [Skript]
 main: com.skquery.skquery.SkQuery

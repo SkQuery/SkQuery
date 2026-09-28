@@ -13,7 +13,6 @@ import ch.njol.util.Kleenean;
 import com.skquery.skquery.annotations.Description;
 import com.skquery.skquery.annotations.Examples;
 import com.skquery.skquery.annotations.Patterns;
-import com.skquery.skquery.util.Reflection;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -21,8 +20,6 @@ import org.bukkit.entity.FallingBlock;
 import org.bukkit.event.Event;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.material.MaterialData;
-
-import java.lang.reflect.InvocationTargetException;
 
 @SuppressWarnings("deprecation")
 @Name("Spawn Falling Block")
@@ -65,12 +62,7 @@ public class EffBlockFall extends Effect {
 					block = location.getWorld().spawnFallingBlock(location, itemstack.getType().createBlockData());
 				EffSecSpawn.lastSpawned = block;
 				if (damages) {
-					try {
-						Object craftSand = Reflection.getOBCClass("entity.CraftFallingSand").getMethod("getHandle").invoke(block);
-						craftSand.getClass().getMethod("a", boolean.class).invoke(craftSand, true);
-					} catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
-						e.printStackTrace();
-					}
+					block.setHurtEntities(true);
 				}
 				if (breaks) {
 					block.setDropItem(false);

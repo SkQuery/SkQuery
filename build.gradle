@@ -17,14 +17,9 @@ compileJava.options.encoding = 'UTF-8'
 repositories {
 	mavenCentral()
 
-	// Spigot
+	// Paper
 	maven {
-		url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
-	}
-
-	// Bungeecord
-	maven {
-		url "https://oss.sonatype.org/content/repositories/snapshots/"
+		url 'https://repo.papermc.io/repository/maven-public/'
 	}
 
 	// Skript
@@ -36,11 +31,11 @@ repositories {
 
 dependencies {
 
-	//Spigot/Bukkit
-	implementation (group: 'org.spigotmc', name: 'spigot-api', version: '1.21.11-R0.2-SNAPSHOT')
+	//Paper/Bukkit (26.1 is the oldest target, later 26.x versions stay compatible)
+	implementation (group: 'io.papermc.paper', name: 'paper-api', version: '26.1.2.build.74-stable')
 
 	//Skript
-	implementation (group: 'com.github.SkriptLang', name: 'Skript', version: '2.14.3') {
+	implementation (group: 'com.github.SkriptLang', name: 'Skript', version: '2.16.2') {
 		transitive = false
 	}
 
